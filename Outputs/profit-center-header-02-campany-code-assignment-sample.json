@@ -1,0 +1,13 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-profit-center-reads/SAP_API_Caller/caller.go#L72",
+	"function": "sap-api-integrations-profit-center-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": [
+		{
+			"ControllingArea": "0001",
+			"ProfitCenter": "100000",
+			"CompanyCode": "0001"
+		}
+	],
+	"time": "2022-09-18T09:49:22+09:00"
+}

@@ -50,12 +50,12 @@ Latona および AION の SAP 関連リソースでは、Inputs フォルダ下�
 * sample.jsonの記載例(1)  
 
 accepter において 下記の例のように、データの種別（＝APIの種別）を指定します。  
-ここでは、"ProfitCenter" が指定されています。    
+ここでは、"Header" が指定されています。    
   
 ```
-	"api_schema": "sap.s4.beh.Profitcenter.v1.ProfitCenter.ValdtyPerdCreated.v1",
+	"api_schema": "SAPProfitCenterReads",
 	"accepter": ["Header"],
-	"profit_center_code": "AUSV0",
+	"profit_center_code": "100000",
 	"deleted": false
 ```
   
@@ -64,9 +64,9 @@ accepter において 下記の例のように、データの種別（＝APIの�
 全データを取得する場合、sample.json は以下のように記載します。  
 
 ```
-	"api_schema": "sap.s4.beh.Profitcenter.v1.ProfitCenter.ValdtyPerdCreated.v1",
+	"api_schema": "SAPProfitCenterReads",
 	"accepter": ["All"],
-	"profit_center_code": "AUSV0",
+	"profit_center_code": "100000",
 	"deleted": false
 ```
 
@@ -102,11 +102,57 @@ func (c *SAPAPICaller) AsyncGetProfitCenter(controllingArea, profitCenter, langu
 ```
 
 ## Output  
-本マイクロサービスでは、[golang-logging-library](https://github.com/latonaio/golang-logging-library) により、以下のようなデータがJSON形式で出力されます。  
+本マイクロサービスでは、[golang-logging-library-for-sap](https://github.com/latonaio/golang-logging-library-for-sap) により、以下のようなデータがJSON形式で出力されます。  
 以下の sample.json の例は、SAP 利益センタ の ヘッダデータ が取得された結果の JSON の例です。  
-以下の項目のうち、"ControllingArea" ～ "to_Text" は、/SAP_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
+以下の項目のうち、"ControllingArea" ～ "to_Text" は、/SAP_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library-for-sap による 定型フォーマットの出力結果です。  
 
 ```
-XXX
-
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-profit-center-reads/SAP_API_Caller/caller.go#L65",
+	"function": "sap-api-integrations-profit-center-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": [
+		{
+			"ControllingArea": "0001",
+			"ProfitCenter": "100000",
+			"ValidityEndDate": "9999-12-31",
+			"ProfitCtrResponsiblePersonName": "Test",
+			"CompanyCode": "",
+			"ProfitCtrResponsibleUser": "",
+			"ValidityStartDate": "1998-01-01",
+			"Department": "",
+			"ProfitCenterStandardHierarchy": "P0001",
+			"Segment": "",
+			"ProfitCenterIsBlocked": "",
+			"FormulaPlanningTemplate": "",
+			"FormOfAddress": "",
+			"AddressName": "",
+			"AdditionalName": "",
+			"ProfitCenterAddrName3": "",
+			"ProfitCenterAddrName4": "",
+			"StreetAddressName": "",
+			"POBox": "",
+			"CityName": "",
+			"PostalCode": "",
+			"District": "",
+			"Country": "",
+			"Region": "",
+			"TaxJurisdiction": "",
+			"Language": "JA",
+			"PhoneNumber1": "",
+			"PhoneNumber2": "",
+			"TeleboxNumber": "",
+			"TelexNumber": "",
+			"FaxNumber": "",
+			"DataCommunicationPhoneNumber": "",
+			"ProfitCenterPrinterName": "",
+			"ProfitCenterCreatedByUser": "LTN0001",
+			"ProfitCenterCreationDate": "2022-09-16",
+			"YY1_LOB_PRC": "",
+			"to_PrftCtrCompanyCodeAssignment": "http://100.21.57.120:8080/sap/opu/odata/sap/API_PROFITCENTER_SRV/A_ProfitCenter(ControllingArea='0001',ProfitCenter='100000',ValidityEndDate=datetime'9999-12-31T00%3A00%3A00')/to_PrftCtrCompanyCodeAssignment",
+			"to_Text": "http://100.21.57.120:8080/sap/opu/odata/sap/API_PROFITCENTER_SRV/A_ProfitCenter(ControllingArea='0001',ProfitCenter='100000',ValidityEndDate=datetime'9999-12-31T00%3A00%3A00')/to_Text"
+		}
+	],
+	"time": "2022-09-18T09:49:22+09:00"
+}
 ```

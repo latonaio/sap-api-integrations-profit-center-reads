@@ -204,6 +204,6 @@ func (c *SAPAPICaller) getQueryWithProfitCenterName(params map[string]string, la
 	if len(params) == 0 {
 		params = make(map[string]string, 1)
 	}
-	params["$filter"] = fmt.Sprintf("Language eq '%s' and ProfitCenterName eq '%s'", language, profitCenterName)
+	params["$filter"] = fmt.Sprintf("Language eq '%s' and substringof('%s', ProfitCenterName)", language, profitCenterName)
 	return params
 }

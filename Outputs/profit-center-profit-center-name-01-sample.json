@@ -1,0 +1,17 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-profit-center-reads/SAP_API_Caller/caller.go#L164",
+	"function": "sap-api-integrations-profit-center-reads/SAP_API_Caller.(*SAPAPICaller).ProfitCenterName",
+	"level": "INFO",
+	"message": [
+		{
+			"Language": "JA",
+			"ControllingArea": "0001",
+			"ProfitCenter": "100000",
+			"ValidityEndDate": "9999-12-31",
+			"ValidityStartDate": "1998-01-01",
+			"ProfitCenterName": "Test Profit Center",
+			"ProfitCenterLongName": ""
+		}
+	],
+	"time": "2022-09-18T10:00:41+09:00"
+}

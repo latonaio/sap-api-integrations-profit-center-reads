@@ -41,17 +41,17 @@
 		"ProfitCenterCreationDate": "",
 		"YY1_LOB_PRC": "",
 		"Text": {
-			"Language": "EN",
+			"Language": "JA",
 			"ValidityEndDate": "",
 			"ValidityStartDate": "",
-			"ProfitCenterName": "Manage",
+			"ProfitCenterName": "Test",
 			"ProfitCenterLongName": ""
 		},
 		"CompanyCodeAssignment": {
 			"CompanyCode": ""
 		}
 	},
-	"api_schema": "sap.s4.beh.profitcenter.v1.ProfitCenter.ValdtyPerdCreated.v1",
+	"api_schema": "SAPProfitCenterReads",
 	"accepter": ["ProfitCenterName"],
 	"profit_center_code": "",
 	"deleted": false

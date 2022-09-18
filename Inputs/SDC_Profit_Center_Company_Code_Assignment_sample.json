@@ -4,8 +4,8 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"ProfitCenter": {
-		"ControllingArea": "A000",
-		"ProfitCenter": "AUSV0",
+		"ControllingArea": "0001",
+		"ProfitCenter": "100000",
 		"ValidityEndDate": "",
 		"ProfitCtrResponsiblePersonName": "",
 		"CompanyCode": "",
@@ -51,8 +51,8 @@
 			"CompanyCode": ""
 		}
 	},
-	"api_schema": "sap.s4.beh.profitcenter.v1.ProfitCenter.ValdtyPerdCreated.v1",
+	"api_schema": "SAPProfitCenterReads",
 	"accepter": ["CompanyCodeAssignment"],
-	"profit_center_code": "AUSV0",
+	"profit_center_code": "100000",
 	"deleted": false
 }
